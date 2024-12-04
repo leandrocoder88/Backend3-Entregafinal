@@ -12,7 +12,7 @@ import mocksRouter from "./routes/mocks.router.js";
 dotenv.config();
 
 const app = express();
-//const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 const MONGODB_URI = process.env.MONGO_URI;
 
 mongoose.set('strictQuery', false);
@@ -29,6 +29,6 @@ app.use('/api/adoptions', adoptionsRouter);
 app.use('/api/sessions', sessionsRouter);
 app.use("/api/mocks", mocksRouter);
 
-//app.listen(PORT, () => console.log(`Listening on ${PORT}`))
+app.listen(PORT, () => console.log(`Listening on ${PORT}`))
 
 export default app; 
