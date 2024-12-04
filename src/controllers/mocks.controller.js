@@ -36,17 +36,12 @@ const generateData = async (req, res) => {
 
         validateServices();
 
-        //Generación de usuarios falsos: 
+        // usuarios falsos: 
         const mockingUsers = await MockingService.generateMockingUsers(users);
 
-        //Generación de mascotas falsas: 
+        // mascotas falsas: 
         const mockingPets = await MockingService.generateMockingPets(pets);
 
-        //Insertar los datos generados en la BD: 
-        //await Promise.all([
-        //    ...mockingUsers.map(user => usersService.create(user)),
-        //    ...mockingPets.map(pet => petsService.create(pet))
-        //]);
 
         const savedUsers = [];
         for (const user of mockingUsers) {
